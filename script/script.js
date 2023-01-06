@@ -2,21 +2,28 @@ let $daily = $(".daily"), $weekly = $(".weekly"), $monthly = $(".monthly"), curr
 let time = [$daily, $weekly, $monthly];
 
 function triggerCard(index){
-    time.forEach(element => element.hide());
-    time[index].show();
+    time.forEach(element => element.hide(200));
+    time[index].show(200);
 }
 
 
 
-function updateCurrentState(select){
-    currentState = select.data("index");
+function updateCurrentState(state){
+    currentState = state;
     triggerCard(currentState);
     console.log(currentState);
 }
 
-$(".daily-s").click(updateCurrentState(), $(".daily-s"))
-$(".monthly-s").click(updateCurrentState(), $(".monthly-s"))
-$(".weekly-s").click(updateCurrentState(), $(".weekly-s"))
+$(".daily-s").click(function(){
+    updateCurrentState(0);
+});
+$(".weekly-s").click(function(){
+    updateCurrentState(1);
+});
+$(".monthly-s").click(function(){
+    updateCurrentState(2);
+});
+
 
 currentState = 0
 triggerCard(currentState);
