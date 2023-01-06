@@ -1,0 +1,210 @@
+:root{
+    --bg-color: hsl(226, 43%, 10%);
+    --card-color : hsl(235, 46%, 20%);
+    --hover-transition: hsl(235, 45%, 61%);
+    --main-profile: hsl(246, 80%, 60%);
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.grid{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    padding: 5rem;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+    gap: 1rem;
+}
+
+.card-container{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* big card */
+
+.big-card, .card{
+    background-color: var(--card-color);
+    border-radius: 1rem;
+    height: 100%;
+}
+
+.big-card{
+    /* padding: 1.5rem; */
+    height: 100%;
+    width: 30%;
+}
+
+.big-card-head{
+    padding: 1.5rem;
+    border-radius: 1rem;
+    height: 70%;
+    background-color: var(--main-profile);
+
+}
+
+.big-card img{
+    width: 40%;
+    border: white 2px solid;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.big-card span{
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.name{
+    font-size: 25px;
+    font-weight: 300px;
+    letter-spacing: 1px;
+    line-height: 2rem;
+}
+
+.time-selection{
+    height: 30%;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.time-selection>*{
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.time-selection>*:hover{
+    color: white;
+}
+
+.time-selection>*:active{
+    color: white;
+}
+
+.select{
+    user-select: none;
+}
+
+.card-head{
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+
+.card{
+    background-repeat: no-repeat;
+    background-position: 95% -10%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.card-content{
+    margin-top: 2rem;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    border-radius: 1rem;
+    background-color: var(--card-color);
+    height: 100%;
+}
+
+.current{
+    font-weight: 300;
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.previous{
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.work{
+    background-image: url(../images/icon-work.svg);
+    background-color: var(--work);
+}
+
+.play{
+    background-image: url(../images/icon-play.svg);
+    background-color: var(--play);
+}
+
+.study{
+    background-image: url(../images/icon-study.svg);
+    background-color: var(--study);
+}
+
+.exercise{
+    background-image: url(../images/icon-exercise.svg);
+    background-color: var(--exercise);
+}
+
+.social{
+    background-image: url(../images/icon-social.svg);
+    background-color: var(--social);
+}
+
+.self-care{
+    background-image: url(../images/icon-self-care.svg);
+    background-color: var(--self-care);
+}
+
+@media screen and (max-width: 375px){
+
+    .grid{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+    }
+
+    .card-container, .big-card{
+        width: 90%;
+    }
+
+    .big-card-head{
+        height:80%
+    }
+
+    .time-selection{
+        flex-direction: row;
+    }
+}
